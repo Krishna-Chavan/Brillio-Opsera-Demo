@@ -10,7 +10,7 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:11-jre-slim
-COPY --from=build /home/app/target/java-spring-api-0.0.1-SNAPSHOT.jar api.jar
+COPY --from=build /home/app/target/opsera-demo-0.0.1-SNAPSHOT.jar api.jar
 RUN rm -rf /home/app
 EXPOSE 9005
 ENTRYPOINT ["java","-jar","api.jar"]
